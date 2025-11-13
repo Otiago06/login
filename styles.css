@@ -1,4 +1,4 @@
-/* styles.css - Atualizado para Dashboard Black */
+/* Reset e configurações gerais */
 * {
     margin: 0;
     padding: 0;
@@ -19,17 +19,28 @@
     --border-color: #333333;
 }
 
+/* CORREÇÃO: Centralização para todas as páginas */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #1a1a1a 0%, #2d1b69 100%);
     min-height: 100vh;
     color: var(--text-primary);
+    
+    /* Centralização forçada */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 20px;
 }
 
+/* Dashboard tem comportamento diferente */
 body.dashboard-body {
+    display: block;
     background: url('images/wallpaper.jpg') no-repeat center center fixed;
     background-size: cover;
     position: relative;
+    padding: 0;
 }
 
 body.dashboard-body::before {
@@ -43,11 +54,17 @@ body.dashboard-body::before {
     z-index: -1;
 }
 
-/* Container Principal */
+/* Container Principal - Centralizado */
 .container {
     width: 100%;
     max-width: 400px;
-    padding: 20px;
+    margin: 0 auto;
+}
+
+/* Para dashboard, container se comporta diferente */
+body.dashboard-body .container {
+    max-width: none;
+    margin: 0;
 }
 
 /* Login e Register Box */
@@ -401,6 +418,12 @@ input::placeholder {
 
 /* Responsividade */
 @media (max-width: 768px) {
+    body {
+        padding: 10px;
+        align-items: flex-start;
+        padding-top: 40px;
+    }
+    
     .dashboard-header {
         flex-direction: column;
         gap: 15px;
@@ -430,10 +453,6 @@ input::placeholder {
     .modal-content {
         width: 95%;
         padding: 20px;
-    }
-    
-    .container {
-        padding: 10px;
     }
     
     .login-box, .register-box {
