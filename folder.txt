@@ -1,0 +1,21 @@
+sistema_login/
+│
+├── config.php
+├── security.php
+│
+├── index.php (login)
+├── register.php
+├── forgot_password.php
+├── reset_password.php
+│
+├── login_process.php
+├── register_process.php
+├── recovery_process.php
+├── reset_password_process.php
+├── change_password_process.php
+│
+├── dashboard.php
+├── logout.php
+│
+├── styles.css
+└── script.js
